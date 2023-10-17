@@ -6,6 +6,7 @@ const HomePage = lazy(() => import("./Pages/Home/Home"))
 const LoginPage = lazy(() => import("./Pages/Login/Login"))
 const TasksPage = lazy(() => import("./Pages/Tasks/Tasks"))
 const NotFound = lazy(() => import("./Pages/NotFound/NotFound"))
+const TaskForm = lazy(() => import("./Pages/TaskForm/TaskForm"))
 
 function App() {
   return (
@@ -15,12 +16,17 @@ function App() {
       </header>
       <NavBar />
       <Suspense fallback={"...Loading"}>
-        <Routes>
-          <Route exact path='/' Component={HomePage}></Route>
-          <Route path='/login' Component={LoginPage} />
-          <Route path='/mytasks' Component={TasksPage} />
-          <Route path='*' Component={NotFound} />
-        </Routes>
+        <main>
+          <Routes>
+            <Route exact path='/' Component={HomePage}></Route>
+            <Route path='/login' Component={LoginPage} />
+            <Route  path='/mytasks' Component={TasksPage}>
+              <Route path='create' Component={TaskForm} />
+              <Route path='edit/:id' Component={TaskForm} />
+            </Route>
+            <Route path='*' Component={NotFound} />
+          </Routes>
+        </main>
       </Suspense>
     </div>
   );

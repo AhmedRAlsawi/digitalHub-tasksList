@@ -1,8 +1,11 @@
 import React from 'react'
+import Task from '../../components/Task/Task'
 
 function Tasks() {
   return (
-    <div>Tasks</div>
+    <>
+      <Task />
+    </>
   )
 }
 
