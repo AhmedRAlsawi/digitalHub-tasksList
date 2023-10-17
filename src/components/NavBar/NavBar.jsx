@@ -4,7 +4,7 @@ import "./NavBar.css"
 
 function NavBar() {
     return (
-        <nav id="topBar">
+        <nav id="topBar" >
             <NavLink
                 to="/"
                 className={({ isActive, isPending }) =>

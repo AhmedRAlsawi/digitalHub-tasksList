@@ -1,3 +1,25 @@
+#topBar a:hover {
+    text-decoration: none;
+    background-color: #282c34;
+    color: white !important;
+    border-radius: 25px;
+}
+
 #topBar a.active {
+    color: navy;
+}
+
+#topBar {
+    height: 10svh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+    background-color: orange;
+}
+
+#topBar a {
     color: red;
+    margin-inline: 10px;
+    padding-inline: 10px;
 }
